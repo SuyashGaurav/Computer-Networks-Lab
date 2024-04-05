@@ -1,0 +1,73 @@
+# Same_Device_Client_Server
+This folder contains Python scripts for a simple video streaming application using sockets in Python. The application consists of two scripts: client.py and server.py, which facilitate video streaming between a client and server running on the same device.
+
+## Concepts Used
+- Socket Programming
+- TCP/IP Protocol
+- Client-Server Architecture
+- Packetization: In this application, video frames are packetized using the pickle module before transmission.
+- Structuring Data: The struct module is used to pack and unpack binary data into a fixed-size representation.
+
+## How to Run the Code:
+
+Open two terminals on same device.
+Navigate to the directory `\Same_Device_Client_Server` in both the terminals.
+
+```bash
+cd Same_Device_Client_Server
+```
+
+```bash
+pip install opencv-python
+```
+
+Start the server in first terminal.
+
+```bash
+python server.py
+```
+
+Then run client in second terminal.
+
+```bash
+python client.py
+```
+
+## Output
+- Upon running the client and server scripts, you will see two windows pop up: one for the server and one for the client.
+- The server window will display the incoming video frames from the client, labeled as "RECEIVING VIDEO."
+- The client window will display the video frames being transmitted to the server, labeled as "TRANSMITTING VIDEO."
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+# Two_Device_OneClient_Server
+This folder contains Python scripts for a video streaming application where the client and server run on two different devices.
+
+## How to Run the Code:
+Navigate to the directory `\Two_Device_OneClient_Server` in terminal of both devices.
+
+```bash
+cd Two_Device_OneClient_Server
+```
+
+Run `server.py` on the device intended to act as the server. Make a note of the server's IP address displayed upon running the script.
+
+```bash
+python server.py
+```
+
+In `client.py`, set the `host_ip` variable to the IP address of the server obtained in step 1.
+Then run client on different device.
+
+```bash
+python client.py
+```
+
+## Output
+- Upon running the client and server scripts, two windows will appear in each device: one for the client and one for the server.
+- The servers's window will display its own video frames (labeled as "Me") alongside the video frames received from the client (labeled as "RECEIVING VIDEO").
+- The client's window will display its own video frames (labeled as "Me") alongside the video frames received from the server (labeled as "RECEIVING VIDEO").
